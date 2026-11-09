@@ -104,30 +104,69 @@ footer{text-align:center;padding:30px;color:var(--gray);font-size:12px;border-to
 .chat{right:12px;bottom:80px;width:92vw}
 }
 @media(max-width:600px){.cards{grid-template-columns:1fr}}
+/* ===============================
+   FINAL RESPONSIVE FIX - 100% Working
+   =============================== */
 
-/* ===== RESPONSIVE FIX ===== */
-@media (max-width: 1024px){
-  .hero-grid, .about-grid, .services-grid, .stats{
+@media (max-width: 992px) {
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+  .left h1 {
+    font-size: 40px !important;
+  }
+  .cta {
+    justify-content: center !important;
+  }
+  .hero-inner > div:last-child {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #links {
+    position: fixed !important;
+    top: 70px !important;
+    right: -100% !important;
+    width: 75% !important;
+    height: 100vh !important;
+    background: #0a0a0a !important;
+    flex-direction: column !important;
+    padding: 30px !important;
+    transition: 0.4s ease !important;
+    align-items: flex-start !important;
+  }
+  #links.open {
+    right: 0 !important;
+  }
+  #ham {
+    display: block !important;
+  }
+  .left h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+  .trust {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  .services-grid {
     grid-template-columns: 1fr !important;
   }
-  .hero-text h1{font-size:42px !important; line-height:1.1 !important;}
 }
 
-@media (max-width: 768px){
-  #links{
-    position:fixed; top:70px; right:-100%; width:75%; height:100vh;
-    background:#0a0a0a; flex-direction:column; padding:30px;
-    transition:0.3s; z-index:99;
+@media (max-width: 480px) {
+  .left h1 {
+    font-size: 28px !important;
   }
-  #links.open{right:0;}
-  #ham{display:block !important;}
-  .hero{padding-top:100px !important;}
-  .stats{grid-template-columns:1fr 1fr !important;}
-}
-
-@media (max-width: 480px){
-  .hero-text h1{font-size:32px !important;}
-  .stats{grid-template-columns:1fr !important;}
-  .services-grid{grid-template-columns:1fr !important;}
-  .form-grid{grid-template-columns:1fr !important;}
+  .cta {
+    flex-direction: column !important;
+  }
+  .cta a, .cta button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 }
