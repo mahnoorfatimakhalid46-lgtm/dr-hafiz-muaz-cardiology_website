@@ -123,3 +123,55 @@ footer{text-align:center;padding:30px;color:var(--gray);font-size:12px;border-to
   .trust{flex-direction:column;gap:15px;text-align:left}
   .heart-card{height:320px}
 }
+/* ===== FIX 1: DATE & SELECT VISIBLE ===== */
+input[type="date"], select {
+  color: white !important;
+  background: #0A0A0A !important;
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+select option {
+  background: #111 !important;
+  color: white !important;
+}
+/* Red border hatao jo empty pe aa raha hai */
+select:invalid, input:invalid {
+  border-color: #222 !important;
+  box-shadow: none !important;
+}
+select:focus {
+  border-color: var(--red) !important;
+}
+
+/* ===== FIX 2: FLOATING BUTTON OVERLAP ===== */
+@media (max-width: 768px) {
+  /* Stats section ko neeche se space do taake buttons upar na aayen */
+  .hero {
+    padding-bottom: 120px !important;
+  }
+  .sec, .contact {
+    padding-bottom: 100px !important;
+  }
+  
+  /* Floating buttons ko thoda upar aur chhota karo mobile pe */
+  .floats {
+    right: 12px !important;
+    bottom: 90px !important; /* upar shift */
+    gap: 8px !important;
+  }
+  .f {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  
+  /* Form button bhi cut ho raha tha usko fix */
+  .form, .contact .container {
+    margin-bottom: 80px !important;
+  }
+}
+
+
